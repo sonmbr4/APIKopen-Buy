@@ -2,20 +2,19 @@ const { describe } = require("pm2");
 const mongoose = require("../config/database");
 
 const schemaCliente = mongoose.Schema({
-    documento: {
-        type: String,
-        required: [true, "El documento es obligatorio"],
-        minLenght: [7, "El documento no tiene el minimo"],
-        maxLenght: [10, "el documento sobre pasa lo permitido"],
-    },
+    
     nombreCompleto:{
         type: String,
         minLenght: 3,
         maxLenght: 230
     },
-    fechaNacimiento:{
-        type : Date,
-        max: Date.now
+    edad:{
+        type : Number,
+        maxLenght: 230
+    },
+    correo: {
+        type: String,
+        required: [true, "El documento es obligatorio"]
     }
 });
 
